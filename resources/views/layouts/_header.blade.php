@@ -6,6 +6,10 @@
         <div>
             {{ Auth::user()->name }}
         </div>
+        <div>
+            <a href="{{ route('users.show', Auth::user()) }}">个人中心</a>
+            <a href="{{ route('users.edit', Auth::user()) }}">编辑资料</a>
+        </div>
         <form action="{{ route('logout') }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
