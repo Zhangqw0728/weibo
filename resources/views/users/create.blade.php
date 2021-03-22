@@ -2,6 +2,7 @@
 @section('title', '注册')
 @section('content')
     <form method="POST" action="{{ route('users.store') }}">
+        {{ csrf_field() }}
         <div>
             <label for="name">名称</label>
             <input type="text" name="name" value="{{ old('name') }}">
