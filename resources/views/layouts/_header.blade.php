@@ -1,7 +1,7 @@
 <div>
     @if(Auth::check())
         <div>
-            <a href="#">用户列表</a>
+            <a href="{{ route('users.index') }}">用户列表</a>
         </div>
         <div>
             {{ Auth::user()->name }}
