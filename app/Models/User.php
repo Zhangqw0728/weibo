@@ -62,4 +62,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Status::class);
     }
+
+    public function show(User $user)
+    {
+        $statuses = $user->statuses()
+            ->orderByDesc('created_at')
+            ->paginate(10);
+        return view('users.show', compact('user', 'statuses'));
+    }
 }
