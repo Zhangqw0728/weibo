@@ -4,6 +4,9 @@
     @if(Auth::check())
         <div>
             <div>
+                @include('shared._stats', ['user' => Auth::user()])
+            </div>
+            <div>
                 @include('shared._status_form')
                 <h4>微博列表</h4>
                 <hr>
